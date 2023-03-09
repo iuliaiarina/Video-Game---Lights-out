@@ -1,0 +1,1235 @@
+============================== Mace4 =================================
+Mace4 (64) version 2009-11A, November 2009.
+Process 6449 was started by iulia on iulia-SVP1321C5E,
+Fri Dec  9 18:08:12 2022
+The command was "LADR-2009-11A/bin/mace4 -f aux.p9".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file aux.p9
+
+assign(domain_size,9).
+    % assign(domain_size, 9) -> assign(start_size, 9).
+    % assign(domain_size, 9) -> assign(end_size, 9).
+set(arithmetic).
+    % set(arithmetic) -> clear(lnh).
+    % set(arithmetic) -> assign(selection_order, 0).
+
+    % Declaring Mace4 arithmetic parse types.
+
+formulas(going_to_church).
+-start(0).
+start(1).
+-start(2).
+-start(3).
+-start(4).
+start(5).
+start(6).
+-start(7).
+start(8).
+-final(0) & -final(1) & -final(2) & -final(3) & -final(4) & -final(5) & -final(6) & -final(7) & -final(8).
+-g(x) -> -f(x,y).
+g(0) -> f(0,0) & f(0,1) & f(0,3) & (all y (y != 0 & y != 1 & y != 3 <-> -f(0,y))).
+g(1) -> f(1,0) & f(1,1) & f(1,2) & f(1,4) & (all y (y != 0 & y != 1 & y != 2 & y != 4 <-> -f(1,y))).
+g(2) -> f(2,1) & f(2,2) & f(2,5) & (all y (y != 1 & y != 2 & y != 5 <-> -f(2,y))).
+g(3) -> f(3,0) & f(3,3) & f(3,4) & f(3,6) & (all y (y != 0 & y != 3 & y != 4 & y != 6 <-> -f(3,y))).
+g(4) -> f(4,1) & f(4,3) & f(4,4) & f(4,5) & f(4,7) & (all y (y != 1 & y != 3 & y != 4 & y != 5 & y != 7 <-> -f(4,y))).
+g(5) -> f(5,2) & f(5,4) & f(5,5) & f(5,8) & (all y (y != 2 & y != 4 & y != 5 & y != 8 <-> -f(5,y))).
+g(6) -> f(6,3) & f(6,6) & f(6,7) & (all y (y != 3 & y != 6 & y != 7 <-> -f(6,y))).
+g(7) -> f(7,4) & f(7,6) & f(7,7) & f(7,8) & (all y (y != 4 & y != 6 & y != 7 & y != 8 <-> -f(7,y))).
+g(8) -> f(8,5) & f(8,7) & f(8,8) & (all y (y != 5 & y != 7 & y != 8 <-> -f(8,y))).
+(all x (-(((((((((start(x) <-> f(0,x)) <-> f(1,x)) <-> f(2,x)) <-> f(3,x)) <-> f(4,x)) <-> f(5,x)) <-> f(6,x)) <-> f(7,x)) <-> f(8,x)) <-> final(x))).
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 -final(0) & -final(1) & -final(2) & -final(3) & -final(4) & -final(5) & -final(6) & -final(7) & -final(8) # label(non_clause).  [assumption].
+2 -g(x) -> -f(x,y) # label(non_clause).  [assumption].
+3 g(0) -> f(0,0) & f(0,1) & f(0,3) & (all y (y != 0 & y != 1 & y != 3 <-> -f(0,y))) # label(non_clause).  [assumption].
+4 g(1) -> f(1,0) & f(1,1) & f(1,2) & f(1,4) & (all y (y != 0 & y != 1 & y != 2 & y != 4 <-> -f(1,y))) # label(non_clause).  [assumption].
+5 g(2) -> f(2,1) & f(2,2) & f(2,5) & (all y (y != 1 & y != 2 & y != 5 <-> -f(2,y))) # label(non_clause).  [assumption].
+6 g(3) -> f(3,0) & f(3,3) & f(3,4) & f(3,6) & (all y (y != 0 & y != 3 & y != 4 & y != 6 <-> -f(3,y))) # label(non_clause).  [assumption].
+7 g(4) -> f(4,1) & f(4,3) & f(4,4) & f(4,5) & f(4,7) & (all y (y != 1 & y != 3 & y != 4 & y != 5 & y != 7 <-> -f(4,y))) # label(non_clause).  [assumption].
+8 g(5) -> f(5,2) & f(5,4) & f(5,5) & f(5,8) & (all y (y != 2 & y != 4 & y != 5 & y != 8 <-> -f(5,y))) # label(non_clause).  [assumption].
+9 g(6) -> f(6,3) & f(6,6) & f(6,7) & (all y (y != 3 & y != 6 & y != 7 <-> -f(6,y))) # label(non_clause).  [assumption].
+10 g(7) -> f(7,4) & f(7,6) & f(7,7) & f(7,8) & (all y (y != 4 & y != 6 & y != 7 & y != 8 <-> -f(7,y))) # label(non_clause).  [assumption].
+11 g(8) -> f(8,5) & f(8,7) & f(8,8) & (all y (y != 5 & y != 7 & y != 8 <-> -f(8,y))) # label(non_clause).  [assumption].
+12 (all x (-(((((((((start(x) <-> f(0,x)) <-> f(1,x)) <-> f(2,x)) <-> f(3,x)) <-> f(4,x)) <-> f(5,x)) <-> f(6,x)) <-> f(7,x)) <-> f(8,x)) <-> final(x))) # label(non_clause).  [assumption].
+
+============================== end of process non-clausal formulas ===
+
+============================== CLAUSES FOR SEARCH ====================
+
+formulas(mace4_clauses).
+-start(0).
+start(1).
+-start(2).
+-start(3).
+-start(4).
+start(5).
+start(6).
+-start(7).
+start(8).
+-final(0).
+-final(1).
+-final(2).
+-final(3).
+-final(4).
+-final(5).
+-final(6).
+-final(7).
+-final(8).
+g(x) | -f(x,y).
+-g(0) | f(0,0).
+-g(0) | f(0,1).
+-g(0) | f(0,3).
+-g(0) | x = 0 | x = 1 | x = 3 | -f(0,x).
+-g(0) | x != 0 | f(0,x).
+-g(0) | x != 1 | f(0,x).
+-g(0) | x != 3 | f(0,x).
+-g(1) | f(1,0).
+-g(1) | f(1,1).
+-g(1) | f(1,2).
+-g(1) | f(1,4).
+-g(1) | x = 0 | x = 1 | x = 2 | x = 4 | -f(1,x).
+-g(1) | x != 0 | f(1,x).
+-g(1) | x != 1 | f(1,x).
+-g(1) | x != 2 | f(1,x).
+-g(1) | x != 4 | f(1,x).
+-g(2) | f(2,1).
+-g(2) | f(2,2).
+-g(2) | f(2,5).
+-g(2) | x = 1 | x = 2 | x = 5 | -f(2,x).
+-g(2) | x != 1 | f(2,x).
+-g(2) | x != 2 | f(2,x).
+-g(2) | x != 5 | f(2,x).
+-g(3) | f(3,0).
+-g(3) | f(3,3).
+-g(3) | f(3,4).
+-g(3) | f(3,6).
+-g(3) | x = 0 | x = 3 | x = 4 | x = 6 | -f(3,x).
+-g(3) | x != 0 | f(3,x).
+-g(3) | x != 3 | f(3,x).
+-g(3) | x != 4 | f(3,x).
+-g(3) | x != 6 | f(3,x).
+-g(4) | f(4,1).
+-g(4) | f(4,3).
+-g(4) | f(4,4).
+-g(4) | f(4,5).
+-g(4) | f(4,7).
+-g(4) | x = 1 | x = 3 | x = 4 | x = 5 | x = 7 | -f(4,x).
+-g(4) | x != 1 | f(4,x).
+-g(4) | x != 3 | f(4,x).
+-g(4) | x != 4 | f(4,x).
+-g(4) | x != 5 | f(4,x).
+-g(4) | x != 7 | f(4,x).
+-g(5) | f(5,2).
+-g(5) | f(5,4).
+-g(5) | f(5,5).
+-g(5) | f(5,8).
+-g(5) | x = 2 | x = 4 | x = 5 | x = 8 | -f(5,x).
+-g(5) | x != 2 | f(5,x).
+-g(5) | x != 4 | f(5,x).
+-g(5) | x != 5 | f(5,x).
+-g(5) | x != 8 | f(5,x).
+-g(6) | f(6,3).
+-g(6) | f(6,6).
+-g(6) | f(6,7).
+-g(6) | x = 3 | x = 6 | x = 7 | -f(6,x).
+-g(6) | x != 3 | f(6,x).
+-g(6) | x != 6 | f(6,x).
+-g(6) | x != 7 | f(6,x).
+-g(7) | f(7,4).
+-g(7) | f(7,6).
+-g(7) | f(7,7).
+-g(7) | f(7,8).
+-g(7) | x = 4 | x = 6 | x = 7 | x = 8 | -f(7,x).
+-g(7) | x != 4 | f(7,x).
+-g(7) | x != 6 | f(7,x).
+-g(7) | x != 7 | f(7,x).
+-g(7) | x != 8 | f(7,x).
+-g(8) | f(8,5).
+-g(8) | f(8,7).
+-g(8) | f(8,8).
+-g(8) | x = 5 | x = 7 | x = 8 | -f(8,x).
+-g(8) | x != 5 | f(8,x).
+-g(8) | x != 7 | f(8,x).
+-g(8) | x != 8 | f(8,x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | -f(2,x) | f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | -f(1,x) | f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | -f(0,x) | f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+start(x) | f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+-start(x) | -f(0,x) | -f(1,x) | -f(2,x) | -f(3,x) | -f(4,x) | -f(5,x) | -f(6,x) | -f(7,x) | -f(8,x) | -final(x).
+end_of_list.
+
+============================== end of clauses for search =============
+
+% The largest natural number in the input is 8.
+
+============================== DOMAIN SIZE 9 =========================
+
+============================== MODEL =================================
+
+interpretation( 9, [number=1, seconds=0], [
+
+        relation(final(_), [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ]),
+
+        relation(g(_), [ 0, 0, 1, 0, 0, 1, 0, 1, 1 ]),
+
+        relation(start(_), [ 0, 1, 0, 0, 0, 1, 1, 0, 1 ]),
+
+        relation(f(_,_), [
+			   0, 0, 0, 0, 0, 0, 0, 0, 0,
+			   0, 0, 0, 0, 0, 0, 0, 0, 0,
+			   0, 1, 1, 0, 0, 1, 0, 0, 0,
+			   0, 0, 0, 0, 0, 0, 0, 0, 0,
+			   0, 0, 0, 0, 0, 0, 0, 0, 0,
+			   0, 0, 1, 0, 1, 1, 0, 0, 1,
+			   0, 0, 0, 0, 0, 0, 0, 0, 0,
+			   0, 0, 0, 0, 1, 0, 1, 1, 1,
+			   0, 0, 0, 0, 0, 1, 0, 1, 1 ])
+]).
+
+============================== end of model ==========================
+
+============================== STATISTICS ============================
+
+For domain size 9.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.42 seconds).
+Ground clauses: seen=9726, kept=2517.
+Selections=42, assignments=79, propagations=859, current_models=1.
+Rewrite_terms=0, rewrite_bools=10328, indexes=0.
+Rules_from_neg_clauses=0, cross_offs=0.
+
+============================== end of statistics =====================
+
+User_CPU=0.42, System_CPU=0.00, Wall_clock=0.
+
+Exiting with 1 model.
+
+Process 6449 exit (max_models) Fri Dec  9 18:08:12 2022
+The process finished Fri Dec  9 18:08:12 2022

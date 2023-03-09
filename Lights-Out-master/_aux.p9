@@ -1,0 +1,56 @@
+assign(domain_size, 9).
+set(arithmetic).
+
+formulas(going_to_church).
+
+% predicatul start(x) este True daca becul x este aprins la inceputul rundei, altfel False:
+%AICI_SCRII:
+
+-start(0).
+start(1).
+-start(2).
+-start(3).
+-start(4).
+start(5).
+start(6).
+-start(7).
+start(8).
+%%%%%%
+%%%%%%%%
+%%%%%%%%
+%%%%%%%%
+
+
+
+
+
+
+% predicatul final(x) este True daca becul x trbuie sa fie aprins la finalul rundei, altfel False (! noi vom considera ca toate becurile trebuie stinse la final): 
+  -final(0) & -final(1)& -final(2) & -final(3) & -final(4) & -final(5) & -final(6) & -final(7) & -final(8).
+
+
+-g(x) -> - f(x,y). 
+  
+  g(0) -> f(0,0) & f(0,1) & f(0,3) & (all y (y!=0 & y!=1 & y!=3 <-> -f(0,y) )).
+  
+  g(1) -> f(1,0) & f(1,1) & f(1,2) & f(1,4) & (all y (y!=0 & y!=1 &y!=2 &y!=4 <-> -f(1,y))).
+  g(2) -> f(2,1) & f(2,2) & f(2,5) & (all y(y!=1 & y!=2 &y!=5 <-> -f(2,y))).
+
+  g(3) -> f(3,0) & f(3,3) & f(3,4) & f(3,6) & (all y(y!=0 & y!=3 &y!=4 &y!=6 <-> -f(3,y))).
+
+  g(4) -> f(4,1) & f(4,3) & f(4,4) & f(4,5) & f(4,7) & (all y(y!=1 & y!=3 &y!=4 &y!=5 &y!=7 <-> -f(4,y))).
+
+  g(5) -> f(5,2) & f(5,4) & f(5,5) & f(5,8) & (all y(y!=2 & y!=4 &y!=5 &y!=8 <-> -f(5,y))).
+
+  g(6) -> f(6,3) & f(6,6) & f(6,7) & (all y(y!=3 & y!=6 &y!=7 <-> -f(6,y))).
+
+  g(7) -> f(7,4) & f(7,6) & f(7,7) & f(7,8) & (all y(y!=4 & y!=6 &y!=7 &y!=8 <-> -f(7,y))).
+
+  g(8) -> f(8,5) & f(8,7) & f(8,8) & (all y(y!=5 & y!=7 &y!=8 <-> -f(8,y))).
+      
+all x(  -(((((((((start(x) <-> f(0,x)) <-> f(1,x)) <-> f(2,x))<-> f(3,x) ) <-> f(4,x))<-> f(5,x))<-> f(6,x))<->f(7,x))<-> f(8,x)) <-> final (x)).
+
+
+
+end_of_list.
+

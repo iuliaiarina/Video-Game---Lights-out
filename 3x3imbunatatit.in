@@ -1,0 +1,54 @@
+assign(domain_size, 9).
+set(arithmetic).
+
+formulas(demodulators).
+ n = 3.   % marime matrice nXn
+ d = 8.   % donemiu
+ l1 = 2.   % pentru a calcula linile:
+ l2 = 5.
+ l3 = 8.
+end_of_list.
+
+formulas(going_to_church).
+
+% predicatul start(x) este True daca becul x este aprins la inceputul rundei, altfel False:
+  -start(0).
+  start(1).
+  -start(2).
+  start(3).
+  -start(4).
+  -start(5).
+  start(6).
+  -start(7).
+  start(8).
+  
+% predicatul final(x) este True daca becul x trbuie sa fie aprins la finalul rundei, altfel False (! noi vom considera ca toate becurile trebuie stinse la final): 
+ all x (-final(x)).
+
+
+ -g(x) -> - f(x,y). 
+ 
+ (x<l1|x=l1) <-> line1(x).
+ x>l1 & (x<l2|x=l2)<-> line2(x).
+ x>l2 & (x<l3|x=l3)<-> line3(x).
+ 
+ all x all y (
+ 	g(x) &
+ 	(
+ 		(y = x+1 & (y<d | y=d) & ((line1(x) & line1(y)) | (line2(x) & line2(y)) | (line3(x) & line3(y)))) 
+      	  |     (y = x+-1 & (y>0 | y=0) & ((line1(x) & line1(y)) | (line2(x) & line2(y)) | (line3(x) & line3(y))))
+          |     (y = x+n & (y<d | y=d))
+          |     (y = x+-n & (y>0 | y=0))
+          |     (y = x)
+        ) <-> f(x,y)
+        
+).  
+
+
+      
+all x(  -(((((((((start(x) <-> f(0,x)) <-> f(1,x)) <-> f(2,x))<-> f(3,x) ) <-> f(4,x))<-> f(5,x))<-> f(6,x))<->f(7,x))<-> f(8,x)) <-> final (x)).
+
+
+
+end_of_list.
+
