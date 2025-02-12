@@ -1,4 +1,4 @@
-Fisierul LADR-2009-11A trebuie introdus in fisierul Lights-Out-master pentru ca aplicatia sa fie functionala (dimensiunea nu icapea pe moodle).
+Fisierul LADR-2009-11A trebuie introdus in fisierul Lights-Out-master pentru ca aplicatia sa fie functionala.
 
 
 
